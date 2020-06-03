@@ -28,10 +28,10 @@ public class Demo02Instanceof {
             cat.catchMouse();
         }
 
-        giveMeApet(new Dog());
+        giveMeAPet(new Dog());
     }
 
-    public static void giveMeApet(Animal animal) {
+    public static void giveMeAPet(Animal animal) {
         if (animal instanceof Dog) {
             Dog dog = (Dog) animal;
             dog.watchHouse();

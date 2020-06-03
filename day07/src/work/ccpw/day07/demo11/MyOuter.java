@@ -19,12 +19,17 @@ package work.ccpw.day07.demo11;
  **/
 public class MyOuter {
     public void methodOuter() {
-        int num = 10; // 所在方法的局部变量
+        // 所在方法的局部变量
+        int num = 10;
 
         class MyInner {
+
             public void methodInner() {
+
+
                 System.out.println(num);
             }
         }
+
     }
 }
