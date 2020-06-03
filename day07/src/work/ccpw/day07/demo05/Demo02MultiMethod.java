@@ -16,10 +16,13 @@ package work.ccpw.day07.demo05;
  **/
 public class Demo02MultiMethod {
     public static void main(String[] args) {
-        Fu obj = new Zi(); // 多态
+        // 多态
+        Fu obj = new Zi();
 
-        obj.method(); // 父子都有，优先用子
-        obj.methodFu(); // 子类没有，父类有，向上找到父类
+        // 父子都有，优先用子
+        obj.method();
+        // 子类没有，父类有，向上找到父类
+        obj.methodFu();
 
         // 编译看左边，左边是Fu，Fu当中没有methodZi方法，所以编译报错。
 //        obj.methodZi(); // 错误写法！
