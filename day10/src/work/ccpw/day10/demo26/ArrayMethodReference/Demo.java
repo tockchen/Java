@@ -25,7 +25,8 @@ public class Demo {
             return new int[len];
         });
         System.out.println(arr1.length);//10
-
+        int[] arr2 = createArray(11,length -> new int[length]);
+        System.out.println(arr2.length);
         /*
             使用方法引用优化Lambda表达式
             已知创建的就是int[]数组
@@ -33,7 +34,7 @@ public class Demo {
             就可以使用方法引用
             int[]引用new,根据参数传递的长度来创建数组
          */
-        int[] arr2 =createArray(10,int[]::new);
+        int[] arr3 =createArray(12,int[]::new);
         System.out.println(Arrays.toString(arr2));
         System.out.println(arr2.length);//10
     }

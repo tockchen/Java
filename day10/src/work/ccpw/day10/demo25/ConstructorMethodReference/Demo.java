@@ -9,6 +9,7 @@ package work.ccpw.day10.demo25.ConstructorMethodReference;
 public class Demo {
     //定义一个方法,参数传递姓名和PersonBuilder接口,方法中通过姓名创建Person对象
     public static void printName(String name,PersonBuilder pb){
+
         Person person = pb.builderPerson(name);
         System.out.println(person.getName());
     }

@@ -13,7 +13,7 @@ public class Man extends Human{
         System.out.println("Hello 我是Man!");
     }
 
-    //定义一个方法参数传递Greetable接口
+    // 定义一个方法参数传递Greetable接口
     public void method(Greetable g){
         g.greet();
     }

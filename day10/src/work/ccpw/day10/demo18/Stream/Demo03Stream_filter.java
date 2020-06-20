@@ -23,13 +23,14 @@ public class Demo03Stream_filter {
         stream2.forEach(name-> System.out.println(name));
 
         /*
-            Stream流属于管道流,只能被消费(使用)一次
-            第一个Stream流调用完毕方法,数据就会流转到下一个Stream上
-            而这时第一个Stream流已经使用完毕,就会关闭了
-            所以第一个Stream流就不能再调用方法了
-            IllegalStateException: stream has already been operated upon or closed
+
          */
-        //遍历stream流
+        // Stream流属于管道流,只能被消费(使用)一次
+        // 第一个Stream流调用完毕方法,数据就会流转到下一个Stream上
+        // 而这时第一个Stream流已经使用完毕,就会关闭了
+        // 所以第一个Stream流就不能再调用方法了
+        // IllegalStateException: stream has already been operated upon or closed
+        // 遍历stream流
         stream.forEach(name-> System.out.println(name));
     }
 }

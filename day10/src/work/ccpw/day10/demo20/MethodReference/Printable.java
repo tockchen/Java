@@ -10,7 +10,7 @@ package work.ccpw.day10.demo20.MethodReference;
 public interface Printable {
     /**
      * 定义字符串的抽象方法
-     * @param s
+     * @param s String
      */
     void print(String s);
 }

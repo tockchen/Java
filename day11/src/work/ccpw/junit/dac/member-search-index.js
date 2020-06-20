@@ -1,0 +1,1 @@
+memberSearchIndex = [{"l":"add(int, int)","h":"","u":"add(int,int)"},{"l":"Calculator()","h":"","u":"%3Cinit%3E()"},{"l":"sub(int, int)","h":"","u":"sub(int,int)"}]
