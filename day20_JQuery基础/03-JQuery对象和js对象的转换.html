@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义js框架</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div id="div1">div1...</div>
+    <div id="div2">div2...</div>
+
+
+    <script>
+        // 1.通过js方式来获取名称叫div的所有html元素对象
+        let divs = document.getElementsByTagName("div");
+        // 可以将其当作数组来使用
+        alert(divs.length);
+        for (let i = 0; i < divs.length; i++) {
+            console.log($(divs[i]).innerHTML);
+        }
+        // 2.通过jq方式来获取名称叫div的所有html元素对象
+        let $divs = $("div");
+        // 也可以当作数组来使用
+        alert($divs.length)
+        // div中所有的div 让其标签体内容变为"bbb" 使用jq方式
+        $divs.html("aaa");
+
+        $divs[1].innerHTML = "ddd";
+        $divs.get(0).innerHTML = "hhh";
+        /*
+            1. JQuery对象在操作时,更加方便.
+            2. JQuery对象和js对象方法不通用的
+            3. 两者相互转换
+                * jq --> js: jq对象[索引] 获取 jq对象.get(索引)
+                * js --> jq: $(js)对象
+         */
+    </script>
+</body>
+</html>
