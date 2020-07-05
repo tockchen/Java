@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        // 1.定义基本格式
+        let penson = {"name": "张三", age: 23, 'gender': true};
+        // alert(penson);
+        // 获取name的值
+        // let name = penson.name;
+        // alert(name)
+         //let name = penson["name"];
+        // 2. 嵌套格式 {}--->[]
+        // var pensons = {
+        //     "persons": [{"name": "张三", "age": 23, "gender": true},
+        //         {"name": "李四", "age": 25, "gender": true},
+        //         {"name": "王五", "age": 24, "gender": true},
+        //         {"name": "马六", "age": 28, "gender": true}
+        //         ]
+        // };
+        // // alert(pensons)
+        // let name1 = pensons.persons[2].name;
+        // console.log(name1);
+        // 3. 嵌套格式 []--->{}
+        var ps = [{"name": "张三", "age": 23, "gender": true},
+                {"name": "李四", "age": 25, "gender": true},
+                {"name": "王五", "age": 24, "gender": true},
+                {"name": "马六", "age": 28, "gender": true}
+            ];
+        // alert(ps)
+        // let name2 = ps[1].name;
+        // console.log(name2);
+
+
+        // 遍历
+        // 获取person对象中所有的键和值
+        // for in 循环
+        // for (var key in penson){
+        //     // 这样的方式获取不出来 因为相当于 penson."name"
+        //     // console.log(key + " : " + penson.key);
+        //     console.log(key + " : " + penson[key]);
+        // }
+
+        // 获取ps中的所有值
+        for (let i = 0 ; i < ps.length;i++){
+            var  p = ps[i];
+            for (let key in p){
+                console.log(key + " : " + p[key]);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

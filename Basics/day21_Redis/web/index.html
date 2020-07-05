@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省份测试</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            // 发送ajax请求,加载所有省份数据
+            // [{"id":1,"name":"北京"},{"id":2,"name":"上海"},{"id":3,"name":"广州"},{"id":4,"name":"陕西"},{"id":5,"name":"安徽"}]
+            $.get("findProvinceServlet", {}, function (data) {
+                // 1.获取select
+                let province = $("#province");
+                // 2.遍历数组
+                $(data).each(function () {
+                    // 3.创建<option>
+                    let option = "<option name='" + this.id + "'>" + this.name + "</option>>";
+                    // 4.调用select的append追加option
+                    province.append(option);
+
+
+                })
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <select id="province">
+        <option>--请选择省份--</option>
+    </select>
+</body>
+</html>

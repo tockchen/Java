@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xmlns:mvc = "http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation = "
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--mvc -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class = "org.springframework.http.converter.StringHttpMessageConverter">
+                <property name = "supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=utf8</value>
+                        <value>application/json;charset=utf8</value>
+                        <value>*/*;charset=utf8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+        <!-- 默认配置方案 -->
+    </mvc:annotation-driven>
+    <!--静态资源访问权限-->
+    <mvc:default-servlet-handler/>
+    <!-- 视图解析器  p:prefix属性表示前缀  p:suffix 表示后缀  -->
+    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--<property name = "prefix" value="/pages/"/>-->
+        <property name = "suffix" value = ".jsp"/>
+    </bean>
+    <!-- spring可以自动去扫描base-pack下面的包或者子包下面的java文件，
+     如果扫描到有Spring的相关注解的类，则把这些类注册为Spring的bean  -->
+    <context:component-scan base-package = "work.ccpw.controller"/>
+    <!--配置简单异常异常处理器-->
+    <!-- 异常处理
+      p:defaultErrorView="error"表示所有没有指定的异常,都跳转到异常处理页面error
+      p:exceptionAttribute="ex"表示异常处理页面中访问的异常对象变量名是ex
+     -->
+    <!--<bean class = "org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--    <property name = "defaultErrorView" value = "error"/>-->
+    <!--    <property name = "exceptionMappings">-->
+    <!--        &lt;!&ndash; 异常映射-->
+    <!--       exceptionMappings表示映射的异常，接受参数是一个Properties-->
+    <!--       key是异常类名，value是处理异常的页面-->
+    <!--       &ndash;&gt;-->
+    <!--        <map>-->
+    <!--            <entry key = "java.lang.ClassCastException" value = "error1"/>-->
+    <!--            <entry key = "work.ccpw.exception.MyException" value = "error2"/>-->
+    <!--        </map>-->
+    <!--    </property>-->
+    <!--</bean>-->
+    <!--自定义异常处理器-->
+    <bean class="work.ccpw.resolver.MyExceptionResolver"/>
+</beans>
