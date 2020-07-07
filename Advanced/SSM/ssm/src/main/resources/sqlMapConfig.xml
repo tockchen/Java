@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--加载properties文件-->
+    <properties resource="jdbc.properties"/>
+
+    <!--定义别名-->
+    <typeAliases>
+        <!--<typeAlias type = "work.ccpw.domain.Account" alias="account"/>-->
+        <package name = "work.ccpw.domain"/>
+    </typeAliases>
+    
+    <!--环境-->
+    <environments default = "developement">
+        <environment id = "developement">
+            <transactionManager type = "JDBC"/>
+            <dataSource type = "POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--加载映射-->
+    <mappers>
+        <!--<mapper resource="work\ccpw\mapper\AccountMapper.xml"></mapper>-->
+
+        <package name = "work.ccpw.mapper"/>
+    </mappers>
+
+
+</configuration>
