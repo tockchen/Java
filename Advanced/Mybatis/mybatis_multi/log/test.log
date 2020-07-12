@@ -1,0 +1,7 @@
+2020-07-12 19:50:46.190 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 137 debug - ==>  Preparing: select * from orders o,user u where o.uid = u.id
+2020-07-12 19:50:46.233 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 137 debug - ==> Parameters: 
+2020-07-12 19:50:46.265 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger 143 trace - <==    Columns: id, ordertime, total, uid, id, username, password, birthday
+2020-07-12 19:50:46.266 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger 143 trace - <==        Row: 1, 2018-12-12, 3000.0, 1, 1, lucy, 123, 2018-12-12
+2020-07-12 19:50:46.269 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger 143 trace - <==        Row: 2, 2018-12-12, 4000.0, 1, 1, lucy, 123, 2018-12-12
+2020-07-12 19:50:46.269 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger 143 trace - <==        Row: 3, 2018-12-12, 5000.0, 2, 2, lucy, 234, 2019-12-12
+2020-07-12 19:50:46.270 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 137 debug - <==      Total: 3
